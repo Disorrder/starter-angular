@@ -1,5 +1,7 @@
-export default class Controller {
+export default class MainController {
+    static $inject = []
     constructor() {
-        console.log('HAHAHA');
+        console.log('ctrl');
+        this.text = 'Hi, there!';
     }
 }

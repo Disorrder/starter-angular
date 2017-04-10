@@ -12,6 +12,7 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const CleanWebpackPlugin  = require('clean-webpack-plugin');
 const CopyWebpackPlugin   = require('copy-webpack-plugin');
 const HtmlWebpackPlugin   = require('html-webpack-plugin');
+const SplitByPathPlugin   = require('webpack-split-by-path');
 // const BowerWebpackPlugin = require("bower-webpack-plugin");
 
 // env variables
@@ -36,7 +37,7 @@ module.exports = {
     context: path.resolve(cfg.path.app),
     watch: flags.watch,
     entry: {
-        vendor: `app/vendor.js`,
+        // vendor: `app/vendor.js`,
         app: `app/app.entry.js`,
     },
     output: {
@@ -114,21 +115,21 @@ module.exports = {
             { from: 'assets/', to: 'assets/' },
         ]),
 
-        // new SplitByPathPlugin([
-        //     {
-        //         name: 'vendor',
-        //         path: [
-        //             path.resolve('./node_modules'),
-        //             path.resolve('./bower_components')
-        //         ]
-        //     }
-        // ]),
+        new SplitByPathPlugin([
+            {
+                name: 'vendor',
+                path: [
+                    path.resolve('./node_modules'),
+                    path.resolve('./bower_components')
+                ]
+            }
+        ]),
 
-        new webpack.ProvidePlugin({
-           $: 'jquery',
-           jQuery: 'jquery',
-           _: 'lodash',
-        })
+        // new webpack.ProvidePlugin({
+        //    $: 'jquery',
+        //    jQuery: 'jquery',
+        //    _: 'lodash',
+        // })
     ]
 }
 
