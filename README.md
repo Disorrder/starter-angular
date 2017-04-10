@@ -1,5 +1,5 @@
 # Starter
-Starter for SPA Angular 1.x pages with Webpack
+Starter for SPA Angular 1.x pages with Webpack. Based on ES6+ Babel, Pug and Stylus
 
 ## Before run
 Without `sudo` on Windows

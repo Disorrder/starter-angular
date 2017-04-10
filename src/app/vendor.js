@@ -4,9 +4,6 @@
 //
 import $ from 'jquery';
 import _ from 'lodash';
-import AFRAME from 'aframe';
 
 window.$ = window.jQuery = $;
 window._ = _;
-window.AFRAME = AFRAME;
-window.THREE = THREE;
