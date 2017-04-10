@@ -13,6 +13,7 @@ const CleanWebpackPlugin  = require('clean-webpack-plugin');
 const CopyWebpackPlugin   = require('copy-webpack-plugin');
 const HtmlWebpackPlugin   = require('html-webpack-plugin');
 const SplitByPathPlugin   = require('webpack-split-by-path');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 // const BowerWebpackPlugin = require("bower-webpack-plugin");
 
 // env variables
@@ -124,6 +125,12 @@ module.exports = {
                 ]
             }
         ]),
+
+        new OpenBrowserPlugin({ url: `http://${cfg.webserver.hostname}:${cfg.webserver.port}` })
+        // isDev()
+        //     ? new OpenBrowserPlugin({ url: `http://${cfg.webserver.hostname}:${cfg.webserver.port}` })
+        //     : new Function()
+        // ,
 
         // new webpack.ProvidePlugin({
         //    $: 'jquery',
