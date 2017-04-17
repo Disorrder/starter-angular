@@ -40,7 +40,7 @@
     "lodash": "^4.17.4"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "//postinstall": "bower install",
     "server": "webpack-dev-server --progress",
     "build": "webpack",
     "build-prod": "NODE_ENV=production npm run build",
